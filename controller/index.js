@@ -9,8 +9,8 @@ import Main from "./db/db.js"
 
 dotenv.config();
 
-const __filename = fileURLToPath(import.meta.url);
-const _dirname = path.dirname('dist');
+// const __filename = fileURLToPath(import.meta.url);
+// const _dirname = path.dirname('dist');
 
 const app = express();
 
@@ -20,15 +20,15 @@ app.use(cors());
 app.use(morgan('default'));
 
 // Serve static files
-app.use(express.static(path.join(_dirname, process.env.PUBLIC_DIR)));
+// app.use(express.static(path.join(_dirname, process.env.PUBLIC_DIR)));
 
 // API routes
 app.use('/api', Routes);
 
 // Serve index.html
-app.use((req, res) => {
-  res.sendFile(path.resolve(_dirname, 'dist', 'index.html'));
-});
+// app.use((req, res) => {
+//   res.sendFile(path.resolve(_dirname, 'dist', 'index.html'));
+// });
 
 // Start server
 app.listen(process.env.PORT, () => {
